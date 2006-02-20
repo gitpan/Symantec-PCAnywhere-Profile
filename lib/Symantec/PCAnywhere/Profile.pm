@@ -133,11 +133,8 @@ sub rawencode {
 	my $encstr = "";                  # encoded string
 
 	foreach ( split( m//, $str) ) {
-		my $c = ord($_);
-
-		my $tmp = chr( $c ^ $prev ^ ($roll++ & 0xFF) );
-		$encstr .= $tmp;
-		$prev = ord($tmp);
+		$prev = ord($_) ^ $prev ^ ($roll++ & 0xFF);
+		$encstr .= chr($prev);
 	}
 
 	return $encstr;
@@ -381,7 +378,7 @@ set_attrs() can be called with exactly the same arguments as this method.
 
 	my @query = qw(PhoneNumber AreaCode IPAddress ControlPort);
 	my $attr = $chf->get_attrs(@query);
-	my %attrs = $chf->get_attrs(@query);
+	my $attrs = $chf->get_attrs(@query);
 
 Pass in a list of items whose attributes you wish to retrieve. Returns a
 reference to a hash whose keys are the values you passed in and whose values
@@ -421,7 +418,7 @@ See L<Symantec::PCAnywhere::Profile::CHF> for a useful subclass of this module.
 =head1 AUTHOR
 
 Darren Kulp, E<lt>kulp@thekulp.comE<gt>, based on code from
-Stephen J. Friedl, E<lt>steve@unixwiz.netE<gt>
+Stephen J. Friedl, (http://unixwiz.net/)
 
 =head1 COPYRIGHT AND LICENSE
 
