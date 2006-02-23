@@ -27,7 +27,7 @@ use strict;
 use warnings;
 use Carp;
 
-our $VERSION = '0.01';
+our $VERSION = '0.03';
 
 #
 # These lists hold coderefs for en-/de-coding.
