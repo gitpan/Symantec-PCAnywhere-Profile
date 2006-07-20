@@ -1,6 +1,12 @@
 Changes
-Makefile.PL
 MANIFEST
+META.yml # Will be created by "make dist"
+Makefile.PL
 README
-t/Symantec-PCAnywhere-Profile.t
 lib/Symantec/PCAnywhere/Profile.pm
+lib/Symantec/PCAnywhere/Profile/CHF.pm
+t/00-load.t
+t/Symantec-PCAnywhere-Profile.t
+t/Symantec-PCAnywhere-Util-CHF.t
+t/pod-coverage.t
+t/pod.t
