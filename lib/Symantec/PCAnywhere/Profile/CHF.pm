@@ -48,16 +48,16 @@ that describes a remote system the client wishes to connect to.
 CHF files seem to always be the same size (3308 bytes), which is helpful
 for decoding.
 
-See this module's base class for more information on the decoding
-mechanism.
+See this module's base class (L<Symantec::PCAnywhere::Profile>) for more
+information on the decoding mechanism.
 
 =head1 VERSION
 
-Version 0.04
+Version 0.06
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.06';
 
 use strict;
 use warnings;
